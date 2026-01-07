@@ -1,0 +1,24 @@
+# Data
+data/
+*.csv
+
+# Models
+models/
+*.pkl
+
+# Plots
+plots/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
