@@ -32,7 +32,7 @@ def download_data(target_dir="data"):
     print(f"Dataset copied to {target_path}")
     return target_path
 
-def load_data(filepath=None):
+def load_data(filepath=None, verbose=True):
     """
     Load data from a CSV file. If filepath is not provided, it attempts to download/find it.
     """
@@ -45,7 +45,8 @@ def load_data(filepath=None):
         raise FileNotFoundError(f"The file {filepath} does not exist.")
     
     df = pd.read_csv(filepath)
-    print(f"Loaded data with {df.shape[0]} rows and {df.shape[1]} columns.")
+    if verbose:
+        print(f"Loaded data with {df.shape[0]} rows and {df.shape[1]} columns.")
     return df
 
 if __name__ == "__main__":

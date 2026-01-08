@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from src.data_loader import load_data
+import os
+import joblib
 
 def preprocess_data(df):
     """
@@ -37,6 +39,12 @@ def preprocess_data(df):
     scaler = MinMaxScaler()
     X_scaled = scaler.fit_transform(X)
     X_scaled = pd.DataFrame(X_scaled, columns=feature_columns)
+    
+    # Save Scaler for future use (Prediction Phase)
+    os.makedirs("models", exist_ok=True)
+    scaler_path = os.path.join("models", "scaler.pkl")
+    joblib.dump(scaler, scaler_path)
+    print(f"Scaler saved to {scaler_path}")
     
     return X_scaled, y
 
