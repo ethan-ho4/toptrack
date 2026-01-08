@@ -57,7 +57,7 @@ To enable real-time searching of *new* songs (post-2021) using the Spotify API:
 ### 🔮 Live Predictor (The Main Tool)
 Interact with the trained model to predict hits.
 ```bash
-python -m src.live_predict
+python main.py
 ```
 *   **Input**: Type any song name (e.g., "Blinding Lights").
 *   **Output**: The model's prediction (🔥 HIT or ❄️ FLOP) and the probability score.
